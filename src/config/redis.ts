@@ -1,0 +1,10 @@
+import IORedis from "ioredis";
+import { env } from "./env";
+
+export const redis = new IORedis({
+  host: env.redisHost,
+  port: env.redisPort,
+  password: env.redisPassword,
+  maxRetriesPerRequest: null,
+  enableReadyCheck: true
+});
